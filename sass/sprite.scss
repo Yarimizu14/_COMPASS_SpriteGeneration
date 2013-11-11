@@ -1,0 +1,13 @@
+
+@import "_util";
+
+$icons: sprite-map("icons/*.png");
+
+.sample {
+    @include sprite($icons, icon-1);
+}
+
+.sample2 {
+    @include sprite($icons, icon-2);
+}
+

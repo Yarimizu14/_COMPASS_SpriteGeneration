@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@mixin sprite($map, $map-item) {
+    display: block;
+    width: round(image-width(sprite-file($map, $map-item)));
+    height: round(image-height(sprite-file($map, $map-item)));
+
+    background-image: sprite-url($map);
+    background-repeat: no-repeat;
+    background-size: round(image-width(sprite-path($map))) round(image-height(sprite-path($map)));
+    background-position: sprite-position($map, $map-item);
+}
