@@ -3,11 +3,24 @@
 
 $icons: sprite-map("icons/*.png");
 
+.test {
+    color: blue;
+}
+
+.test2 {
+    color: red;
+}
+
+
 .sample {
     @include sprite($icons, icon-1);
 }
 
 .sample2 {
     @include sprite($icons, icon-2);
+}
+
+.sample3 {
+    @include sprite($icons, icon-3);
 }
 

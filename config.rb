@@ -22,3 +22,28 @@ javascripts_dir = "javascripts"
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+sprites = Array.new
+
+# スプライト画像が保存された直後のコールバック
+on_sprite_saved do |filename|
+    sprites << filename
+end
+
+on_stylesheet_saved do |filename|
+    #スプライト画像のファイル末に付くランダムな文字列を削除する
+    for sprite in sprites do
+        if File.exists?(sprite)
+            FileUtils.cp sprite, sprite.gsub(%r{-s[a-z0-9]{10}\.png$}, '.png')
+            FileUtils.rm_rf(sprite)
+        end
+    end
+
+    # スタイルシート内のスプライト画像のファイル末に付くランダムな文字列を削除する
+    if File.exists?(filename)
+        css = File.read(filename, :encoding => Encoding::UTF_8)
+        File.open(filename, 'w+:utf-8') do |f|
+            f << css.gsub(/@charset.*;\n/, '').gsub(%r{-s[a-z0-9]{10}\.png}, '.png')
+        end
+    end
+end

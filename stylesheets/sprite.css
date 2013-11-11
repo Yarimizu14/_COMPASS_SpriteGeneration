@@ -1,21 +1,42 @@
 /* line 6, ../sass/sprite.scss */
+.test {
+  color: blue;
+}
+
+/* line 10, ../sass/sprite.scss */
+.test2 {
+  color: red;
+}
+
+/* line 15, ../sass/sprite.scss */
 .sample {
   display: block;
   width: 50px;
   height: 50px;
-  background-image: url('/images_sprite/icons-s06c8fba991.png');
+  background-image: url('/images_sprite/icons.png');
   background-repeat: no-repeat;
   background-size: 50px 250px;
   background-position: 0 -200px;
 }
 
-/* line 10, ../sass/sprite.scss */
+/* line 19, ../sass/sprite.scss */
 .sample2 {
   display: block;
   width: 50px;
   height: 50px;
-  background-image: url('/images_sprite/icons-s06c8fba991.png');
+  background-image: url('/images_sprite/icons.png');
   background-repeat: no-repeat;
   background-size: 50px 250px;
   background-position: 0 -100px;
+}
+
+/* line 23, ../sass/sprite.scss */
+.sample3 {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url('/images_sprite/icons.png');
+  background-repeat: no-repeat;
+  background-size: 50px 250px;
+  background-position: 0 0;
 }
